@@ -5,21 +5,22 @@ class Bank
   end
   def deposit
     puts 'Please enter the amount you would like to deposit'
-    make_deposit(get_user_amount)
+    deposit_money = check_is_number(get_user_amount)
+    make_deposit(deposit_money)
+
+
 
   end
   private
   def get_user_amount
     user_input = gets.chomp
-    check_is_number(user_input)
   end
   def make_deposit(amount)
     self.balance += amount.to_i
   end
   def check_is_number(object)
     if /[a-z]/=~object
-      raise "You can only deposit numerical amounts"
-      deposit
+      puts "You can only deposit numerical amounts"
     end
   end
 end
