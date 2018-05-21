@@ -15,7 +15,7 @@ describe Bank do
   it 'adds the users amount to the bank balance' do
     ## act
     bank.send :make_deposit, "10"
-
+    ## assert
     expect(bank.balance).to eq 10
 
   end
