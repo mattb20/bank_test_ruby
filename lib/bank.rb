@@ -1,13 +1,14 @@
 require 'pry'
 class Bank
   attr_accessor :balance
+  attr_accessor :functions
   def initialize
     @balance = 0
+    @functions = ["1) Deposit", "2) Withdraw ", "3) Print statement"]
   end
-
-  def withdraw
-    puts 'Please enter the amount you would like to withdraw'
-    amount_to_withdraw = get_valid_user_amount
+  def function
+    ask_user_choice
+    print_functions
   end
 
   private

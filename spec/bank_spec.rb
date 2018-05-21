@@ -36,4 +36,8 @@ describe Bank do
   it 'gives the user functions to choose from' do
     expect{ bank.send :ask_user_choice }.to output("Please enter the number corresponding to what you would like to do\n").to_stdout
   end
+  it 'has a method that returns possible functions of bank' do
+    bank.functions = ["1) Deposit"]
+    expect(bank.send :print_functions). to output("[1) Deposit]").to_stdout
+  end
 end
