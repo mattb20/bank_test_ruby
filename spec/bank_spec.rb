@@ -10,7 +10,7 @@ describe Bank do
   it 'has a method to ask the user to deposit a given amount and store it in the balance' do
     # act
     # assert
-    expect{ bank.deposit }.to output("Please enter the amount you would like to deposit\n").to_stdout
+    expect{ bank.send :get_deposit_amount }.to output("Please enter the amount you would like to deposit\n").to_stdout
   end
   it 'adds the users amount to the bank balance' do
     ## act
@@ -18,8 +18,8 @@ describe Bank do
     ## assert
     expect(bank.balance).to eq 10
   end
-  it 'has a method that prevents the user from trying to deposit a non numerical amount' do
-    expect{ bank.send :check_is_number, "1234h" }.to output("You can only deposit numerical amounts\nPlease enter the amount you would like to deposit\n").to_stdout
+  it 'has a method that prevents the user from trying to deposit or withdraw a non numerical amount' do
+    expect(bank.send :check_is_number, "1234h").to eq false
   end
   it 'has a method that will output a deposit confirmation' do
     expect{ bank.send :confirm_deposit, 10 }.to output("Deposit of £10 successful\n").to_stdout
@@ -28,9 +28,12 @@ describe Bank do
     ## arrange
     bank.balance= 15
     ## act
-    bank.withdraw(10)
+    bank.send :subtract_from_balance, 10
     ## assertion
     expect(bank.balance).to eq 5
 
+  end
+  it 'gives the user functions to choose from' do
+    expect{ bank.get_user_choice }.to output("Please enter the number corresponding to what you would like to do\n").to_stdout
   end
 end
