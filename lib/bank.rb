@@ -9,6 +9,7 @@ class Bank
   def function
     ask_user_choice
     print_functions
+    get_user_choice
   end
 
   private
@@ -47,6 +48,9 @@ class Bank
   end
   def subtract_from_balance(amount)
     self.balance -= amount
+  end
+  def get_user_choice
+    user_choice = gets.chomp.to_i
   end
   def get_deposit_amount
     puts 'Please enter the amount you would like to deposit'
