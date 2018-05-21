@@ -21,7 +21,13 @@ class Bank
         make_deposit(deposit_amount)
         confirm_deposit(deposit_amount)
         print_current_balance
-    end
+      when 2
+        withdrawal_amount = get_valid_user_amount
+        while !check_user_has_balance(withdrawal_amount)
+          withdrawal_amount = get_valid_user_amount
+        end
+        make_withdrawal(withdrawal_amount)
+      end
   end
   def get_valid_user_amount
     puts 'Please enter the amount you would like to deposit/withdraw'
@@ -39,11 +45,12 @@ class Bank
     self.balance += amount.to_i
     confirm_deposit(amount)
   end
-  def make_withdrawal(amount)
+  def check_user_has_balance(amount)
     if amount > self.balance
       puts "You cannot withdraw more money than you currently have in your balance"
+      false
     else
-      self.balance -= amount
+      true
     end
   end
   def check_is_number(object)
@@ -55,6 +62,9 @@ class Bank
   end
   def confirm_deposit(amount)
     puts "Deposit of £" + amount.to_s + " successful"
+  end
+  def make_withdrawal(amount)
+    self.balance -= amount
   end
   def print_current_balance
     puts "Your current balance: £#{self.balance}"
