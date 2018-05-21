@@ -38,6 +38,6 @@ describe Bank do
   end
   it 'has a method that returns possible functions of bank' do
     bank.functions = ["1) Deposit"]
-    expect(bank.send :print_functions). to output("[1) Deposit]").to_stdout
+    expect{bank.send :print_functions}. to output("1) Deposit\n").to_stdout
   end
 end

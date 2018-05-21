@@ -40,6 +40,11 @@ class Bank
   def print_current_balance
     puts "Your current balance: £#{self.balance}"
   end
+  def print_functions
+    self.functions.each do |function|
+      puts function
+    end
+  end
   def subtract_from_balance(amount)
     self.balance -= amount
   end
