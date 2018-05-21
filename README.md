@@ -5,7 +5,16 @@
 - Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
 ### My approach
-- I began by reading through
+- I began by reading through the requirements and decomposed them into user stories in order to better determine the objects and functionality required
+
+### User stories
+- As a user of the bank the new account I should be able to see the balance is 0
+- As a user of the bank I want to deposit my money in the bank and receive a confirmation and my current balance
+- As a user of the bank I want to query my balance any time while using the app
+- As a user of the bank I want to withdraw a given amount of money and receive a confirmation and my current balance
+- As a user of the bank, to see my recent activity, I would like to see a print out of my statement showing my activity in reverse chronological order
+
+
 
 ### How to use
 - Use Ruby version 2.5.0
