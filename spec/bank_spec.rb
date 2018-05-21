@@ -24,4 +24,13 @@ describe Bank do
   it 'has a method that will output a deposit confirmation' do
     expect{ bank.send :confirm_deposit, 10 }.to output("Deposit of £10 successful\n").to_stdout
   end
+  it 'has a method that will deduct a given amount from the balance' do
+    ## arrange
+    bank.balance= 15
+    ## act
+    bank.withdraw(10)
+    ## assertion
+    expect(bank.balance).to eq 5
+
+  end
 end

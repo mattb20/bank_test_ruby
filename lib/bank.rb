@@ -7,6 +7,8 @@ class Bank
     puts 'Please enter the amount you would like to deposit'
     amount_to_deposit = get_valid_user_amount
     make_deposit(amount_to_deposit)
+    confirm_deposit(amount_to_deposit)
+    print_current_balance
   end
 
   private
@@ -28,5 +30,8 @@ class Bank
   end
   def confirm_deposit(amount)
     puts "Deposit of £" + amount.to_s + " successful"
+  end
+  def print_current_balance
+    puts "Your current balance: £#{self.balance}"
   end
 end
