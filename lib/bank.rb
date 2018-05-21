@@ -26,4 +26,7 @@ class Bank
     end
     true
   end
+  def confirm_deposit(amount)
+    puts "Deposit of £" + amount.to_s + " successful"
+  end
 end
