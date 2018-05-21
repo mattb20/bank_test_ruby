@@ -19,7 +19,7 @@ describe Bank do
     expect(bank.balance).to eq 10
   end
   it 'has a method that prevents the user from trying to deposit a non numerical amount' do
-    expect{ bank.send :check_is_number, "1234h" }.to output("You can only deposit numerical amounts\n").to_stdout
+    expect{ bank.send :check_is_number, "1234h" }.to output("You can only deposit numerical amounts\nPlease enter the amount you would like to deposit\n").to_stdout
 
   end
 end
