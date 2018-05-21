@@ -1,5 +1,5 @@
 require 'bank'
-require 'simplecov'
+
 
 describe Bank do
   subject(:bank) { described_class.new }
@@ -17,6 +17,9 @@ describe Bank do
     bank.send :make_deposit, "10"
     ## assert
     expect(bank.balance).to eq 10
+  end
+  it 'has a method that prevents the user from trying to deposit a non numerical amount' do
+    expect{ bank.check_is_number }.to raise_error("You can only deposit numerical amounts")
 
   end
 end
