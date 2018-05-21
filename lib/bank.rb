@@ -9,17 +9,28 @@ class Bank
   def function
     ask_user_choice
     print_functions
-    get_user_choice
+    user_choice = get_user_choice
+    apply_choice(user_choice.to_i)
   end
 
   private
+  def apply_choice(choice)
+    case choice
+      when 1
+        deposit_amount = get_valid_user_amount
+        make_deposit(deposit_amount)
+        confirm_deposit(deposit_amount)
+        print_current_balance
+    end
+  end
   def get_valid_user_amount
+    puts 'Please enter the amount you would like to deposit/withdraw'
     user_input = gets.chomp
     while !check_is_number(user_input)
       puts "You can only deposit/withdraw numerical amounts"
       get_valid_user_amount
     end
-    make_deposit(user_input)
+    return user_input
   end
   def ask_user_choice
     puts "Please enter the number corresponding to what you would like to do"
@@ -51,8 +62,16 @@ class Bank
   end
   def get_user_choice
     user_choice = gets.chomp.to_i
+    if 0 < user_choice && user_choice < self.functions.length
+      return user_choice
+    else
+      puts "That is not a valid choice"
+      get_user_choice
+    end
   end
   def get_deposit_amount
     puts 'Please enter the amount you would like to deposit'
   end
 end
+bank = Bank.new
+bank.function

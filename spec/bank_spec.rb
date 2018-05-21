@@ -4,6 +4,10 @@ describe Bank do
   before do
     allow($stdout).to receive(:write)
   end
+  after do
+    bank.balance = 0
+  end
+
   it 'has a default balance of 0' do
     expect(bank.balance).to eq 0
   end
@@ -40,9 +44,13 @@ describe Bank do
     bank.functions = ["1) Deposit"]
     expect{bank.send :print_functions}. to output("1) Deposit\n").to_stdout
   end
+  it 'has a method that prints the balance of the bank account' do
+    expect{ bank.send :print_current_balance }.to output("Your current balance: £0\n").to_stdout
+  end
   it 'has a method that will get a choice from the user' do
     allow(bank).to receive(:gets).and_return("1\n")
     expect(bank.send :get_user_choice).to eq 1
   end
+
 
 end
