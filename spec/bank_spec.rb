@@ -51,6 +51,10 @@ describe Bank do
     allow(bank).to receive(:gets).and_return("1\n")
     expect(bank.send :get_user_choice).to eq 1
   end
+  it 'prevents the user from withdrawing more than they have currently on balance'do
+    bank.balance = 5
+    expect { bank.send :make_withdrawal, 10 }.to output("You cannot withdraw more money than you currently have in your balance\n").to_stdout
+  end
 
 
 end

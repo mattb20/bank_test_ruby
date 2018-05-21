@@ -39,6 +39,13 @@ class Bank
     self.balance += amount.to_i
     confirm_deposit(amount)
   end
+  def make_withdrawal(amount)
+    if amount > self.balance
+      puts "You cannot withdraw more money than you currently have in your balance"
+    else
+      self.balance -= amount
+    end
+  end
   def check_is_number(object)
     if /[a-z-]/=~object
       false
@@ -73,5 +80,3 @@ class Bank
     puts 'Please enter the amount you would like to deposit'
   end
 end
-bank = Bank.new
-bank.function
