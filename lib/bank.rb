@@ -19,6 +19,9 @@ class Bank
     end
     make_deposit(user_input)
   end
+  def ask_user_choice
+    puts "Please enter the number corresponding to what you would like to do"
+  end
   def make_deposit(amount)
     self.balance += amount.to_i
     confirm_deposit(amount)

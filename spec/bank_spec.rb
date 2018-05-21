@@ -34,6 +34,6 @@ describe Bank do
 
   end
   it 'gives the user functions to choose from' do
-    expect{ bank.get_user_choice }.to output("Please enter the number corresponding to what you would like to do\n").to_stdout
+    expect{ bank.send :ask_user_choice }.to output("Please enter the number corresponding to what you would like to do\n").to_stdout
   end
 end
