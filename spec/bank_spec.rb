@@ -1,4 +1,5 @@
 require 'bank'
+require 'simplecov'
 
 describe Bank do
   subject(:bank) { described_class.new }
@@ -6,8 +7,8 @@ describe Bank do
     expect(bank.balance).to eq 0
   end
   it 'has a method to ask the user to deposit a given amount and store it in the balance' do
+    # act
     # assert
-    expect{ bank.deposit }.to output("Please enter the amount you would like to deposit").to_stdout
-
+    expect{ bank.deposit }.to output("Please enter the amount you would like to deposit\n").to_stdout
   end
 end
