@@ -20,6 +20,8 @@ describe Bank do
   end
   it 'has a method that prevents the user from trying to deposit a non numerical amount' do
     expect{ bank.send :check_is_number, "1234h" }.to output("You can only deposit numerical amounts\nPlease enter the amount you would like to deposit\n").to_stdout
-
+  end
+  it 'has a method that will output a deposit confirmation' do
+    expect{ bank.send :confirm_deposit, 10 }.to output("Deposit of £10 successful").to_stdout
   end
 end
