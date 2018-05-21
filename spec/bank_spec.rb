@@ -5,11 +5,9 @@ describe Bank do
   it 'has a default balance of 0' do
     expect(bank.balance).to eq 0
   end
-  it 'has a method for the user to deposit a given amount and store it in the balance' do
-    # act
-    bank.deposit(10)
+  it 'has a method to ask the user to deposit a given amount and store it in the balance' do
     # assert
-    expect(bank.balance).to eq 10
+    expect{ bank.deposit }.to output("Please enter the amount you would like to deposit").to_stdout
 
   end
 end
