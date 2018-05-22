@@ -7,6 +7,7 @@ describe Bank do
   end
   after do
     bank.balance = 0
+    bank.transaction_history = []
   end
 
   it 'has a default balance of 0' do
@@ -67,8 +68,13 @@ describe Bank do
     ## act
     bank.send :update_transaction_history, 'deposit', deposit_amount
     ## assert
-    expect(bank.transaction_history[0]).to eq(["#{d}","#{deposit_amount}","","#{bank.balance}"])
-end
+    expect(bank.transaction_history[0]).to eq(["#{d}","#{deposit_amount}"," ","#{bank.balance}"])
+  end
+  it 'has a method that will print out the transaction history in the required format' do
+    bank.transaction_history = ["22/05/2018", "10.00", " ", "10.00"]
+    expect{ bank.send :print_transaction_history, bank.transaction_history }.to output("date || credit || debit || balance\n22/05/2018 || 10.0 || || 10.00").to_stdout
+
+  end
 
 
 end

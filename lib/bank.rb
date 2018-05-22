@@ -96,8 +96,12 @@ class Bank
   def update_transaction_history(action, amount)
     if action == 'deposit'
       today_date = DateTime.now.strftime("%d/%m/%Y")
-      self.transaction_history.push([today_date, '%.2f' % amount.to_i, '', self.balance.to_s])
+      self.transaction_history.push([today_date, '%.2f' % amount.to_i, ' ', self.balance.to_s])
     elsif action == 'withdraw'
     end
+  end
+  def print_transaction_history(history)
+    #the account history will be printed on new lines separating each transaction with the header date || credit || debit || balance
+
   end
 end
