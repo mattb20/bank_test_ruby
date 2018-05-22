@@ -1,10 +1,12 @@
-require 'pry'
+require 'date'
 class Bank
   attr_accessor :balance
   attr_accessor :functions
+  attr_accessor :transaction_history
   def initialize
     @balance = 0
     @functions = ["1) Deposit", "2) Withdraw ", "3) Print statement"]
+    @transaction_history = []
   end
   def function
     ask_user_choice
@@ -27,7 +29,7 @@ class Bank
           withdrawal_amount = get_valid_user_amount
         end
         make_withdrawal(withdrawal_amount)
-      end
+    end
   end
   def get_valid_user_amount
     puts 'Please enter the amount you would like to deposit/withdraw'

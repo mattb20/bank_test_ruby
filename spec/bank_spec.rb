@@ -1,4 +1,5 @@
 require 'bank'
+require 'date'
 describe Bank do
   subject(:bank) { described_class.new }
   before do
@@ -58,6 +59,17 @@ describe Bank do
   it 'has a method that will withdraw a valid amount of money from the balance' do
     bank.send :make_withdrawal, 10
     expect(bank.balance).to eq -10
+  end
+  it 'has a method that will store whether the user made a deposit or withdrawal in the transaction history along with the date' do
+    ## arrange
+    d = DateTime.now
+    d.strftime("%d/%m/%Y")
+    deposit_amount = 10.to_f.to_s
+    ## act
+    bank.send :make_deposit, 10
+    ## assert
+    expect(bank.transaction_history).to_include("'#{d}','#{deposit_amount}',''")
+
   end
 
 
