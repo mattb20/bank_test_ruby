@@ -7,7 +7,7 @@ class Bank
     @balance = 0
     @functions = ["1) Deposit", "2) Withdraw ", "3) Print statement"]
     ## Transactions will be stored in the following format inside history: [date, credit, debit, balance]
-    @transaction_history = []
+    @transaction_history = [["date || credit || debit || balance"]]
   end
   def function
     ask_user_choice
@@ -31,6 +31,8 @@ class Bank
           withdrawal_amount = get_valid_user_amount
         end
         make_withdrawal(withdrawal_amount)
+      when 3
+        print_transaction_history(self.transaction_history)
     end
   end
   def get_valid_user_amount
@@ -96,12 +98,13 @@ class Bank
   def update_transaction_history(action, amount)
     if action == 'deposit'
       today_date = DateTime.now.strftime("%d/%m/%Y")
-      self.transaction_history.push([today_date, '%.2f' % amount.to_i, ' ', self.balance.to_s])
+      self.transaction_history.push([today_date, '%.2f' % amount.to_i, ' ', '%.2f' % self.balance.to_i])
     elsif action == 'withdraw'
     end
   end
   def print_transaction_history(history)
     #the account history will be printed on new lines separating each transaction with the header date || credit || debit || balance
-
+    history.each do |transaction|
+    end
   end
 end

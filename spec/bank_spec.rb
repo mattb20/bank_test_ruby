@@ -68,10 +68,10 @@ describe Bank do
     ## act
     bank.send :update_transaction_history, 'deposit', deposit_amount
     ## assert
-    expect(bank.transaction_history[0]).to eq(["#{d}","#{deposit_amount}"," ","#{bank.balance}"])
+    expect(bank.transaction_history[1]).to eq(["#{d}","#{deposit_amount}"," ",'%.2f' % bank.balance.to_i])
   end
   it 'has a method that will print out the transaction history in the required format' do
-    bank.transaction_history = ["22/05/2018", "10.00", " ", "10.00"]
+    bank.transaction_history = [["date || credit || debit || balance"],["22/05/2018", "10.00", " ", "10.00"]]
     expect{ bank.send :print_transaction_history, bank.transaction_history }.to output("date || credit || debit || balance\n22/05/2018 || 10.0 || || 10.00").to_stdout
 
   end
