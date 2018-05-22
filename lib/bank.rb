@@ -1,8 +1,5 @@
 require 'date'
 class Bank
-  attr_accessor :balance
-  attr_accessor :functions
-  attr_accessor :transaction_history
   def initialize
     @balance = 0
     @functions = ["1) Deposit", "2) Withdraw ", "3) Print statement"]
@@ -105,6 +102,11 @@ class Bank
   def print_transaction_history(history)
     #the account history will be printed on new lines separating each transaction with the header date || credit || debit || balance
     history.each do |transaction|
+      puts transaction.join(" || ")
     end
   end
+  public
+  attr_accessor :balance
+  attr_accessor :functions
+  attr_accessor :transaction_history
 end
