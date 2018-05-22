@@ -6,6 +6,7 @@ class Bank
   def initialize
     @balance = 0
     @functions = ["1) Deposit", "2) Withdraw ", "3) Print statement"]
+    ## Transactions will be stored in the following format inside history: [date, credit, debit, balance]
     @transaction_history = []
   end
   def function
@@ -23,6 +24,7 @@ class Bank
         make_deposit(deposit_amount)
         confirm_deposit(deposit_amount)
         print_current_balance
+        update_transaction_history(deposit, deposit_amount)
       when 2
         withdrawal_amount = get_valid_user_amount
         while !check_user_has_balance(withdrawal_amount)
@@ -90,5 +92,12 @@ class Bank
   end
   def get_deposit_amount
     puts 'Please enter the amount you would like to deposit'
+  end
+  def update_transaction_history(action, amount)
+    if action == 'deposit'
+      today_date = DateTime.now.strftime("%d/%m/%Y")
+      self.transaction_history.push([today_date, '%.2f' % amount.to_i, '', self.balance.to_s])
+    elsif action == 'withdraw'
+    end
   end
 end

@@ -62,15 +62,13 @@ describe Bank do
   end
   it 'has a method that will store whether the user made a deposit or withdrawal in the transaction history along with the date' do
     ## arrange
-    d = DateTime.now
-    d.strftime("%d/%m/%Y")
-    deposit_amount = 10.to_f.to_s
+    d = DateTime.now.strftime("%d/%m/%Y")
+    deposit_amount = "10.00"
     ## act
-    bank.send :make_deposit, 10
+    bank.send :update_transaction_history, 'deposit', deposit_amount
     ## assert
-    expect(bank.transaction_history).to_include("'#{d}','#{deposit_amount}',''")
-
-  end
+    expect(bank.transaction_history[0]).to eq(["#{d}","#{deposit_amount}","","#{bank.balance}"])
+end
 
 
 end
