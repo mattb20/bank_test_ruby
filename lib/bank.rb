@@ -21,13 +21,15 @@ class Bank
         make_deposit(deposit_amount)
         confirm_deposit(deposit_amount)
         print_current_balance
-        update_transaction_history(deposit, deposit_amount)
+        update_transaction_history('deposit', deposit_amount)
       when 2
         withdrawal_amount = get_valid_user_amount
         while !check_user_has_balance(withdrawal_amount)
           withdrawal_amount = get_valid_user_amount
         end
         make_withdrawal(withdrawal_amount)
+        update_transaction_history('withdrawal', withdrawal_amount)
+
       when 3
         print_transaction_history(self.transaction_history)
     end
@@ -49,7 +51,7 @@ class Bank
     confirm_deposit(amount)
   end
   def check_user_has_balance(amount)
-    if amount > self.balance
+    if amount.to_i > self.balance
       puts "You cannot withdraw more money than you currently have in your balance"
       false
     else

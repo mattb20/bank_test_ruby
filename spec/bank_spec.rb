@@ -4,6 +4,8 @@ describe Bank do
   subject(:bank) { described_class.new }
   before do
     allow($stdout).to receive(:write)
+    allow($stdin).to receive(:gets)
+
   end
   after do
     bank.balance = 0
@@ -73,8 +75,17 @@ describe Bank do
   it 'has a method that will print out the transaction history in the required format' do
     bank.transaction_history = [["date || credit || debit || balance"],["22/05/2018", '10.00', " ", '10.00']]
     expect{ bank.send :print_transaction_history, bank.transaction_history }.to output("date || credit || debit || balance\n22/05/2018 || 10.00 ||   || 10.00\n").to_stdout
-
   end
+  it 'allows the user to successfully deposit an amount' do
+    bank.function;
+    bank.should_receive(:ask_user_choice);
+    expect(STDOUT).to receive(:puts).with('Please enter the number corresponding to what you would like to do');
+    expect(bank).to receive(:gets).and_return("1\n");
 
-
+    # the_date = DateTime.now.strftime("%d/%m/%Y");
+    # allow(bank).to receive(:gets).and_return("1\n");
+    # allow(bank).to receive(:puts)
+    # allow(bank).to receive(:gets).and_return("10\n");
+    # expect(bank.function).to eq([["date || credit || debit || balance"],[the_date, '10.00', ' ', '10.00']])
+  end
 end
