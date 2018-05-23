@@ -71,14 +71,6 @@ class Bank
   def make_withdrawal(amount)
     self.balance -= amount
   end
-  def print_current_balance
-    puts "Your current balance: £#{self.balance}"
-  end
-  def print_functions
-    self.functions.each do |function|
-      puts function
-    end
-  end
   def subtract_from_balance(amount)
     self.balance -= amount
   end
@@ -94,17 +86,25 @@ class Bank
   def get_deposit_amount
     puts 'Please enter the amount you would like to deposit'
   end
-  def update_transaction_history(action, amount)
-    if action == 'deposit'
-      today_date = DateTime.now.strftime("%d/%m/%Y")
-      self.transaction_history.push([today_date, '%.2f' % amount.to_i, ' ', '%.2f' % self.balance.to_i])
-    elsif action == 'withdraw'
+  def print_current_balance
+    puts "Your current balance: £#{self.balance}"
+  end
+  def print_functions
+    self.functions.each do |function|
+      puts function
     end
   end
   def print_transaction_history(history)
     #the account history will be printed on new lines separating each transaction with the header date || credit || debit || balance
     history.each do |transaction|
       puts transaction.join(" || ")
+    end
+  end
+  def update_transaction_history(action, amount)
+    if action == 'deposit'
+      today_date = DateTime.now.strftime("%d/%m/%Y")
+      self.transaction_history.push([today_date, '%.2f' % amount.to_i, ' ', '%.2f' % self.balance.to_i])
+    elsif action == 'withdraw'
     end
   end
   public

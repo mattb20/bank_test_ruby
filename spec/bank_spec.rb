@@ -81,6 +81,13 @@ describe Bank do
     bank.should_receive(:ask_user_choice);
     expect(STDOUT).to receive(:puts).with('Please enter the number corresponding to what you would like to do');
     expect(bank).to receive(:gets).and_return("1\n");
+    expect(STDOUT).to receive(:puts).with('Please enter the amount you would like to deposit/withdraw');
+    expect(bank).to receive(:gets).and_return("10\n");
+    expect(STDOUT).to receive(:puts).with("Deposit of £10 successful");
+    expect(STDOUT).to receive(:puts).with("Your current balance: £10");
+    bank.should_receive(:update_transaction_history)
+
+
 
     # the_date = DateTime.now.strftime("%d/%m/%Y");
     # allow(bank).to receive(:gets).and_return("1\n");
