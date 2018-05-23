@@ -3,7 +3,7 @@ class Bank
   def initialize
     @balance = 0
     @functions = ["1) Deposit", "2) Withdraw ", "3) Print statement"]
-    ## Transactions will be stored in the following format inside history: [date, credit, debit, balance]
+    #Transactions will be stored in the following format inside history: [date, credit, debit, balance]
     @transaction_history = [["date || credit || debit || balance"]]
   end
   def function
@@ -82,7 +82,7 @@ class Bank
   end
   def get_user_choice
     user_choice = gets.chomp.to_i
-    if 0 < user_choice && user_choice < self.functions.length
+    if 0 < user_choice && user_choice <= self.functions.length
       return user_choice
     else
       puts "That is not a valid choice"

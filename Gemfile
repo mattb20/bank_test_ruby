@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
-
-gem 'rake'
-gem 'rubocop'
-gem 'rspec'
 gem 'pry'
+gem 'rake'
+gem 'rspec'
+gem 'rubocop'
+
 
 group :test do
-  gem 'simplecov', :require => false
-  gem 'simplecov-console', :require => false
+  gem 'simplecov', require: false
+  gem 'simplecov-console', require: false
 end
