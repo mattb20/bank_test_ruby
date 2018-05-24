@@ -97,7 +97,7 @@ describe Bank do
     expect(STDOUT).to receive(:puts).with('You cannot withdraw more money than you currently have in your balance');
     expect(STDOUT).to receive(:puts).with('Please enter the amount you would like to deposit/withdraw');
     expect(STDIN).to receive(:gets).and_return("2\n");
-    expect(STDOUT).to receive(:puts).with("Withdrawal of £2 successful\n");
+    expect(STDOUT).to receive(:puts).with("Withdrawal of £2 successful");
     expect(STDOUT).to receive(:puts).with("Your current balance: £0");
     bank.send(:apply_choice, 2)
   end

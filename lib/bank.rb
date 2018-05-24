@@ -28,6 +28,7 @@ class Bank
         end
         make_withdrawal(withdrawal_amount)
         confirm_withdrawal(withdrawal_amount)
+        print_current_balance
         update_transaction_history('withdrawal', withdrawal_amount)
       when 3
         print_transaction_history(self.transaction_history)
