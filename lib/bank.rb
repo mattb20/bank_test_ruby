@@ -26,7 +26,7 @@ class Bank
         while !check_user_has_balance(withdrawal_amount)
           withdrawal_amount = get_valid_user_amount
         end
-        # make_withdrawal(withdrawal_amount)
+        make_withdrawal(withdrawal_amount)
         confirm_withdrawal(withdrawal_amount)
         update_transaction_history('withdrawal', withdrawal_amount)
       when 3
@@ -39,6 +39,12 @@ class Bank
     else
       true
     end
+  end
+  def confirm_deposit(amount)
+    puts "Deposit of £" + amount.to_s + " successful"
+  end
+  def confirm_withdrawal(amount)
+    puts "Withdrawal of £" + amount.to_s + " successful"
   end
   def get_valid_user_amount
     puts 'Please enter the amount you would like to deposit/withdraw'
@@ -63,14 +69,11 @@ class Bank
       true
     end
   end
-  def confirm_deposit(amount)
-    puts "Deposit of £" + amount.to_s + " successful"
-  end
   def make_withdrawal(amount)
-    self.balance -= amount
+    self.balance -= amount.to_i
   end
   def subtract_from_balance(amount)
-    self.balance -= amount
+    self.balance -= amount.to_i
   end
   def get_user_choice
     user_choice = STDIN.gets.chomp

@@ -30,6 +30,9 @@ describe Bank do
   it 'has a method that will output a deposit confirmation' do
     expect{ bank.send(:confirm_deposit, 10) }.to output("Deposit of £10 successful\n").to_stdout
   end
+  it 'has a method that will output a withdrawal confirmation' do
+    expect{ bank.send(:confirm_withdrawal, 10) }.to output("Withdrawal of £10 successful\n").to_stdout
+  end
   it 'has a method that will deduct a given amount from the balance' do
     #arrange
     bank.balance= 15
@@ -84,5 +87,18 @@ describe Bank do
     expect(STDOUT).to receive(:puts).with("Deposit of £10 successful");
     expect(STDOUT).to receive(:puts).with("Your current balance: £10");
     bank.function;
+  end
+  it 'will ask the user for another withdrawal amount if they enter an amount that is not a valid(will take balance < 0)' do
+    # arrange
+    bank = Bank.new;
+    bank.balance = 2;
+    expect(STDOUT).to receive(:puts).with('Please enter the amount you would like to deposit/withdraw');
+    expect(STDIN).to receive(:gets).and_return("5\n");
+    expect(STDOUT).to receive(:puts).with('You cannot withdraw more money than you currently have in your balance');
+    expect(STDOUT).to receive(:puts).with('Please enter the amount you would like to deposit/withdraw');
+    expect(STDIN).to receive(:gets).and_return("2\n");
+    expect(STDOUT).to receive(:puts).with("Withdrawal of £2 successful\n");
+    expect(STDOUT).to receive(:puts).with("Your current balance: £0");
+    bank.send(:apply_choice, 2)
   end
 end
