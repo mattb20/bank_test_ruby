@@ -5,7 +5,6 @@ describe Bank do
   before do
     allow($stdout).to receive(:write)
     allow($stdin).to receive(:gets)
-
   end
   after do
     bank.balance = 0
@@ -77,22 +76,16 @@ describe Bank do
     expect{ bank.send :print_transaction_history, bank.transaction_history }.to output("date || credit || debit || balance\n22/05/2018 || 10.00 ||   || 10.00\n").to_stdout
   end
   it 'allows the user to successfully deposit an amount' do
-    bank.function;
-    bank.should_receive(:ask_user_choice);
+    # arrange
+    bank = Bank.new;
+    bank.functions = ["1) Deposit"]
+    expect(STDOUT).to receive(:puts).with('1) Deposit');
     expect(STDOUT).to receive(:puts).with('Please enter the number corresponding to what you would like to do');
-    expect(bank).to receive(:gets).and_return("1\n");
+    expect(STDIN).to receive(:gets).and_return("1\n");
     expect(STDOUT).to receive(:puts).with('Please enter the amount you would like to deposit/withdraw');
-    expect(bank).to receive(:gets).and_return("10\n");
+    expect(STDIN).to receive(:gets).and_return("10\n");
     expect(STDOUT).to receive(:puts).with("Deposit of £10 successful");
     expect(STDOUT).to receive(:puts).with("Your current balance: £10");
-    bank.should_receive(:update_transaction_history)
-
-
-
-    # the_date = DateTime.now.strftime("%d/%m/%Y");
-    # allow(bank).to receive(:gets).and_return("1\n");
-    # allow(bank).to receive(:puts)
-    # allow(bank).to receive(:gets).and_return("10\n");
-    # expect(bank.function).to eq([["date || credit || debit || balance"],[the_date, '10.00', ' ', '10.00']])
+    bank.function;
   end
 end

@@ -1,4 +1,4 @@
-require 'date'
+ require 'date'
 class Bank
   def initialize
     @balance = 0
@@ -12,7 +12,6 @@ class Bank
     user_choice = get_user_choice
     apply_choice(user_choice.to_i)
   end
-
   private
   def apply_choice(choice)
     case choice
@@ -29,14 +28,20 @@ class Bank
         end
         make_withdrawal(withdrawal_amount)
         update_transaction_history('withdrawal', withdrawal_amount)
-
       when 3
         print_transaction_history(self.transaction_history)
     end
   end
+  def check_is_number(object)
+    if /[a-z-]/=~object
+      false
+    else
+      true
+    end
+  end
   def get_valid_user_amount
     puts 'Please enter the amount you would like to deposit/withdraw'
-    user_input = gets.chomp
+    user_input = STDIN.gets.chomp
     while !check_is_number(user_input)
       puts "You can only deposit/withdraw numerical amounts"
       get_valid_user_amount
@@ -48,18 +53,10 @@ class Bank
   end
   def make_deposit(amount)
     self.balance += amount.to_i
-    confirm_deposit(amount)
   end
   def check_user_has_balance(amount)
     if amount.to_i > self.balance
       puts "You cannot withdraw more money than you currently have in your balance"
-      false
-    else
-      true
-    end
-  end
-  def check_is_number(object)
-    if /[a-z-]/=~object
       false
     else
       true
@@ -75,8 +72,8 @@ class Bank
     self.balance -= amount
   end
   def get_user_choice
-    user_choice = gets.chomp.to_i
-    if 0 < user_choice && user_choice <= self.functions.length
+    user_choice = STDIN.gets.chomp
+    if 0 < user_choice.to_i && user_choice.to_i <= self.functions.length
       return user_choice
     else
       puts "That is not a valid choice"
