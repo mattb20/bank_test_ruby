@@ -26,7 +26,8 @@ class Bank
         while !check_user_has_balance(withdrawal_amount)
           withdrawal_amount = get_valid_user_amount
         end
-        make_withdrawal(withdrawal_amount)
+        # make_withdrawal(withdrawal_amount)
+        confirm_withdrawal(withdrawal_amount)
         update_transaction_history('withdrawal', withdrawal_amount)
       when 3
         print_transaction_history(self.transaction_history)
@@ -98,10 +99,11 @@ class Bank
     end
   end
   def update_transaction_history(action, amount)
+    today_date = DateTime.now.strftime("%d/%m/%Y")
     if action == 'deposit'
-      today_date = DateTime.now.strftime("%d/%m/%Y")
       self.transaction_history.push([today_date, '%.2f' % amount.to_i, ' ', '%.2f' % self.balance.to_i])
     elsif action == 'withdraw'
+      self.transaction_history.push([today_date,' ', '%.2f' % amount.to_i, '%.2f' % self.balance.to_i])
     end
   end
   public

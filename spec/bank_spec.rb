@@ -10,7 +10,6 @@ describe Bank do
     bank.balance = 0
     bank.transaction_history = []
   end
-
   it 'has a default balance of 0' do
     expect(bank.balance).to eq 0
   end
@@ -38,7 +37,6 @@ describe Bank do
     bank.send :subtract_from_balance, 10
     #assertion
     expect(bank.balance).to eq 5
-
   end
   it 'gives the user functions to choose from' do
     expect{ bank.send :ask_user_choice }.to output("Please enter the number corresponding to what you would like to do\n").to_stdout
@@ -51,16 +49,15 @@ describe Bank do
     expect{ bank.send :print_current_balance }.to output("Your current balance: £0\n").to_stdout
   end
   it 'has a method that will get a choice from the user' do
-    allow(bank).to receive(:gets).and_return("1\n")
-    expect(bank.send(:get_user_choice)).to eq 1
+    expect(STDIN).to receive(:gets).and_return("1\n")
+    expect(bank.send(:get_user_choice)).to eq ("1")
   end
   it 'prevents the user from withdrawing more than they have currently on balance'do
     bank.balance = 5
     expect { bank.send :check_user_has_balance, 10 }.to output("You cannot withdraw more money than you currently have in your balance\n").to_stdout
   end
   it 'has a method that will withdraw a valid amount of money from the balance' do
-    bank.send :make_withdrawal, 10
-    expect(bank.balance).to eq -10
+    expect(bank.send :make_withdrawal, 10).to eq -10
   end
   it 'has a method that will store whether the user made a deposit or withdrawal in the transaction history along with the date' do
     #arrange
