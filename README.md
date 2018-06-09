@@ -22,3 +22,8 @@
 - Change directory into 'bank_test_ruby'
 - Run 'bundle install'
 - Run specs through 'rspec'
+
+### Screenshots
+
+### To do:
+Refactor into more classes
