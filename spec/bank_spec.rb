@@ -3,8 +3,9 @@ require 'date'
 describe Bank do
   subject(:bank) { described_class.new }
   before do
-    allow($stdout).to receive(:write)
-    allow($stdin).to receive(:gets)
+    allow(STDOUT).to receive(:write)
+    allow(STDOUT).to receive(:puts)
+    allow(STDIN).to receive(:gets)
   end
   after do
     bank.balance = 0
@@ -100,5 +101,11 @@ describe Bank do
     expect(STDOUT).to receive(:puts).with("Withdrawal of £2 successful");
     expect(STDOUT).to receive(:puts).with("Your current balance: £0");
     bank.send(:apply_choice, 2)
+  end
+  it 'gives the user an option to quit the app' do
+    # arrange
+    bank = Bank.new;
+    $stdout.puts 'hello'
+    expect(bank.functions.select{|function| function == "1) Deposit"}).to be(nil)
   end
 end

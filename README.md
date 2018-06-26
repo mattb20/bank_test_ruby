@@ -38,3 +38,7 @@ Please enter the amount you would like to deposit/withdraw
 10
 Deposit of £10 successful
 Your current balance: £10
+
+### Improvements
+- Refactor into classes
+- Check tests are not tightly coupled to code
