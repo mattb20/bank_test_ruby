@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'github-linguist'
 gem 'pry'
 gem 'rake'
 gem 'rspec'
