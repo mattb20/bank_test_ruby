@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/mattburgoyne/Desktop/Projects/bank_test_ruby/spec/bank_spec.rb": [
+      "/Users/user/Desktop/Projects/bank_test_ruby/spec/bank_spec.rb": [
         1,
         1,
         1,
@@ -107,7 +107,7 @@
         null,
         null
       ],
-      "/Users/mattburgoyne/Desktop/Projects/bank_test_ruby/lib/bank.rb": [
+      "/Users/user/Desktop/Projects/bank_test_ruby/lib/bank.rb": [
         1,
         1,
         1,
@@ -227,6 +227,6 @@
         null
       ]
     },
-    "timestamp": 1527166168
+    "timestamp": 1530032392
   }
 }
