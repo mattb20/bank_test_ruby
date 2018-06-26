@@ -2,7 +2,7 @@ require 'rugged'
 require 'linguist'
 
 repo = Rugged::Repository.new('.')
-project = Linguist::Repository.new(repo, repo.head.target_id)
+Linguist::Repository.new(repo, repo.head.target_id)
 require './lib/bank'
 bank = Bank.new
 bank.function
