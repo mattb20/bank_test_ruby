@@ -7,6 +7,10 @@ def expect_functions_to_be_printed
   expect(STDOUT).to receive(:puts).with("3) Print statement")
   expect(STDOUT).to receive(:puts).with("4) Quit")
 end
+def expect_user_to_choose_invalid_option
+  expect(STDIN).to receive(:gets).and_return("100\n");
+end
+
 describe Bank do
   subject(:bank) { described_class.new }
   before do

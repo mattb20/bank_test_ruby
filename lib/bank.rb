@@ -32,6 +32,8 @@ class Bank
         update_transaction_history('withdrawal', withdrawal_amount)
       when 3
         print_transaction_history(self.transaction_history)
+      when 4
+        puts "See you!"
     end
   end
   def ask_user_choice
