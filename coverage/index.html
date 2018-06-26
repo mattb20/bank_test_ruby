@@ -14,7 +14,7 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-06-26T18:59:06+01:00">2018-06-26T18:59:06+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-06-26T19:13:57+01:00">2018-06-26T19:13:57+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -127,7 +127,7 @@
         <li class="covered" data-hits="21" data-linenumber="5">
           <span class="hits">21</span>
           
-          <code class="ruby">    @functions = [&quot;1) Deposit&quot;, &quot;2) Withdraw &quot;, &quot;3) Print statement&quot;]</code>
+          <code class="ruby">    @functions = [&quot;1) Deposit&quot;, &quot;2) Withdraw &quot;, &quot;3) Print statement&quot;, &quot;4) Quit&quot;]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -1469,10 +1469,10 @@
           <code class="ruby">    $stdout.puts &#39;hello&#39;</code>
         </li>
       
-        <li class="covered" data-hits="4" data-linenumber="109">
-          <span class="hits">4</span>
+        <li class="covered" data-hits="5" data-linenumber="109">
+          <span class="hits">5</span>
           
-          <code class="ruby">    expect(bank.functions.select{|function| /Quit/.match(function)}.size).to be &gt; 1</code>
+          <code class="ruby">    expect(bank.functions.select{|function| /Quit/.match(function)}.size).to be &gt;= 1</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="110">

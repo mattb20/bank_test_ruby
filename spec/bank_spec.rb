@@ -106,6 +106,6 @@ describe Bank do
     # arrange
     bank = Bank.new;
     $stdout.puts 'hello'
-    expect(bank.functions.select{|function| /Quit/.match(function)}.size).to be > 1
+    expect(bank.functions.select{|function| /Quit/.match(function)}.size).to be >= 1
   end
 end

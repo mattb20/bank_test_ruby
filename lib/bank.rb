@@ -2,7 +2,7 @@
 class Bank
   def initialize
     @balance = 0
-    @functions = ["1) Deposit", "2) Withdraw ", "3) Print statement"]
+    @functions = ["1) Deposit", "2) Withdraw ", "3) Print statement", "4) Quit"]
     #Transactions will be stored in the following format inside history: [date, credit, debit, balance]
     @transaction_history = [["date || credit || debit || balance"]]
   end
