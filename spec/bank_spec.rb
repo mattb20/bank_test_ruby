@@ -108,4 +108,18 @@ describe Bank do
     $stdout.puts 'hello'
     expect(bank.functions.select{|function| /Quit/.match(function)}.size).to be >= 1
   end
+  it 'quits the app with a message confirmation when the user chooses to quit' do
+    # arrange
+    bank = Bank.new;
+    some_greeting = "See you!"
+    expect(STDOUT).to receive(:puts).with("Please enter the number corresponding to what you would like to do")
+    expect(STDOUT).to receive(:puts).with("1) Deposit")
+    expect(STDOUT).to receive(:puts).with("2) Withdraw")
+    expect(STDOUT).to receive(:puts).with("3) Print statement")
+    expect(STDOUT).to receive(:puts).with("4) Quit")
+    expect(STDIN).to receive(:gets).and_return("4\n");
+    expect(STDOUT).to receive(:puts).with(some_greeting)
+    bank.function;
+
+  end
 end

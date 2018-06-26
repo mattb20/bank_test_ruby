@@ -2,7 +2,7 @@
 class Bank
   def initialize
     @balance = 0
-    @functions = ["1) Deposit", "2) Withdraw ", "3) Print statement", "4) Quit"]
+    @functions = ["1) Deposit", "2) Withdraw", "3) Print statement", "4) Quit"]
     #Transactions will be stored in the following format inside history: [date, credit, debit, balance]
     @transaction_history = [["date || credit || debit || balance"]]
   end
@@ -34,6 +34,9 @@ class Bank
         print_transaction_history(self.transaction_history)
     end
   end
+  def ask_user_choice
+    puts "Please enter the number corresponding to what you would like to do"
+  end
   def check_is_number(object)
     if /[a-z-]/=~object
       false
@@ -55,9 +58,6 @@ class Bank
       get_valid_user_amount
     end
     return user_input
-  end
-  def ask_user_choice
-    puts "Please enter the number corresponding to what you would like to do"
   end
   def make_deposit(amount)
     self.balance += amount.to_i
