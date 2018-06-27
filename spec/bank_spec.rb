@@ -119,7 +119,7 @@ describe Bank do
     $stdout.puts 'hello'
     expect(bank.functions.select{|function| /Quit/.match(function)}.size).to be >= 1
   end
-  it 'quits the app with a message confirmation when the user chooses to quit' do
+  it 'gives the user a message confirmation when the user chooses to quit' do
     # arrange
     bank = Bank.new;
     some_greeting = "See you!"
@@ -129,4 +129,5 @@ describe Bank do
     bank.function;
 
   end
+
 end
