@@ -229,6 +229,10 @@
       ],
       "/Users/user/Desktop/Projects/bank_test_ruby/lib/printer.rb": [
         1,
+        1,
+        null,
+        1,
+        null,
         null
       ],
       "/Users/user/Desktop/Projects/bank_test_ruby/spec/printer_spec.rb": [
@@ -272,6 +276,6 @@
         null
       ]
     },
-    "timestamp": 1530795066
+    "timestamp": 1530795135
   }
 }
