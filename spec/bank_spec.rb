@@ -34,12 +34,6 @@ describe Bank do
   it 'has a method that prevents the user from trying to deposit or withdraw a non numerical amount' do
     expect(bank.send(:check_is_number, '1234h')).to eq false
   end
-  it 'has a method that will output a deposit confirmation' do
-    expect{ bank.send(:confirm_deposit, 10) }.to output("Deposit of £10 successful\n").to_stdout
-  end
-  it 'has a method that will output a withdrawal confirmation' do
-    expect{ bank.send(:confirm_withdrawal, 10) }.to output("Withdrawal of £10 successful\n").to_stdout
-  end
   it 'has a method that will call the transaction class' do
     expect(Transaction).to receive(:new);
     bank.send(:make_transaction, 5, 'deposit');
