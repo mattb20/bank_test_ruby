@@ -49,12 +49,6 @@ class Bank
       true
     end
   end
-  def confirm_deposit(amount)
-    puts "Deposit of £" + amount.to_s + " successful"
-  end
-  def confirm_withdrawal(amount)
-    puts "Withdrawal of £" + amount.to_s + " successful"
-  end
   def get_valid_user_amount
     puts 'Please enter the amount you would like to deposit/withdraw'
     user_input = STDIN.gets.chomp
