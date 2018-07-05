@@ -14,4 +14,7 @@ describe Transaction do
       allow(bank). to receive(:balance=).and_return(1);
       expect(transaction.complete(bank, 4)).to eq(1);
     end
+    it 'will call the method named complete on initialization' do
+        expect(transaction).to receive(:complete).with(bank, 'deposit', 10);
+    end
 end

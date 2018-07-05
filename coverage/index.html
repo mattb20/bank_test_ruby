@@ -14,14 +14,14 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-07-05T10:47:39+01:00">2018-07-05T10:47:39+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-07-05T10:50:05+01:00">2018-07-05T10:50:05+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">84.15%</span></span>
+    (<span class="covered_percent"><span class="yellow">84.32%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
@@ -32,8 +32,8 @@
   <a name="AllFiles"></a>
   <div>
     <b>6</b> files in total.
-    <b>183</b> relevant lines. 
-    <span class="green"><b>154</b> lines covered</span> and
+    <b>185</b> relevant lines. 
+    <span class="green"><b>156</b> lines covered</span> and
     <span class="red"><b>29</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -103,9 +103,9 @@
       <tr>
         <td class="strong"><a href="#8cbe233865985c761f56397d51be291778eebb4d" class="src_link" title="spec/transaction_spec.rb">spec/transaction_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>17</td>
-        <td>14</td>
-        <td>14</td>
+        <td>20</td>
+        <td>16</td>
+        <td>16</td>
         <td>0</td>
         <td>1.1</td>
       </tr>
@@ -1744,8 +1744,8 @@
     <h3>spec/transaction_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>14</b> relevant lines. 
-      <span class="green"><b>14</b> lines covered</span> and
+      <b>16</b> relevant lines. 
+      <span class="green"><b>16</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1849,7 +1849,25 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &#39;will call the method named complete on initialization&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        expect(transaction).to receive(:complete).with(bank, &#39;deposit&#39;, 10);</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby">end</code>
