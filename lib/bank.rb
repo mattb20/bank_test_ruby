@@ -64,7 +64,7 @@ class Bank
     end
     return user_input
   end
-  def make_deposit(amount)
+  def make_transaction(amount, transaction_type)
     Transaction.new(self, 'deposit', amount);
   end
   def check_user_has_balance(amount)
