@@ -1,4 +1,5 @@
 require 'transaction'
+require 'printer'
 class Bank
   def initialize
     @balance = 0
@@ -17,8 +18,7 @@ class Bank
     case choice
       when 1
         deposit_amount = get_valid_user_amount
-        make_deposit(deposit_amount)
-        confirm_deposit(deposit_amount)
+        make_transaction(deposit_amount, 'deposit')
         print_current_balance
         update_transaction_history('deposit', deposit_amount)
         function
@@ -65,7 +65,7 @@ class Bank
     return user_input
   end
   def make_transaction(amount, transaction_type)
-    Transaction.new(self, 'deposit', amount);
+    Transaction.new(self, amount, transaction_type);
   end
   def check_user_has_balance(amount)
     if amount.to_i > self.balance
@@ -110,7 +110,5 @@ class Bank
     end
   end
   public
-  attr_accessor :balance
-  attr_accessor :functions
-  attr_accessor :transaction_history
+  attr_accessor :balance, :functions, :transaction_history
 end
