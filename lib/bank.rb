@@ -28,7 +28,6 @@ class Bank
           withdrawal_amount = get_valid_user_amount
         end
         make_transaction(withdrawal_amount, 'withdrawal')
-        confirm_withdrawal(withdrawal_amount)
         print_current_balance
         update_transaction_history('withdrawal', withdrawal_amount)
         function
