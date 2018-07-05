@@ -75,12 +75,6 @@ class Bank
       true
     end
   end
-  def make_withdrawal(amount)
-    self.balance -= amount.to_i
-  end
-  def subtract_from_balance(amount)
-    self.balance -= amount.to_i
-  end
   def get_user_choice
     user_choice = STDIN.gets.chomp
     if 0 < user_choice.to_i && user_choice.to_i <= self.functions.length
