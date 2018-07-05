@@ -27,7 +27,7 @@ class Bank
         while !check_user_has_balance(withdrawal_amount)
           withdrawal_amount = get_valid_user_amount
         end
-        make_withdrawal(withdrawal_amount)
+        make_transaction(withdrawal_amount, 'withdrawal')
         confirm_withdrawal(withdrawal_amount)
         print_current_balance
         update_transaction_history('withdrawal', withdrawal_amount)
