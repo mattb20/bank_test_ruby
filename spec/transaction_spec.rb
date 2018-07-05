@@ -15,8 +15,9 @@ describe Transaction do
       expect(transaction.complete(bank, 4)).to eq(1);
     end
     it 'will output a confirmation of a transaction' do
+      expect(STDOUT).to receive(:puts).with('Withdraw of £4 successful!');
       transaction = Transaction.new(bank, 'withdraw', 4);
-      expect(transaction.send(:confirm, 'withdraw', 4)).to eq 'Withdrawal of £4 successful!'
+      transaction.send(:confirm, 4)
     end
 
 end

@@ -6,4 +6,7 @@ class Transaction
   def complete(bank, amount)
     self.transaction_type == 'deposit' ? bank.balance += amount.to_i : bank.balance -= amount.to_i;
   end
+  def confirm(amount)
+    puts self.transaction_type.capitalize + ' of ' + '£' + amount.to_s + ' successful!'
+  end
 end
