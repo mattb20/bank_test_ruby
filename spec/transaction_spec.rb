@@ -14,5 +14,5 @@ describe Transaction do
       allow(bank). to receive(:balance=).and_return(1);
       expect(transaction.complete(bank, 4)).to eq(1);
     end
-  
+
 end

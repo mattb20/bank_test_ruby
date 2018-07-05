@@ -4,11 +4,6 @@ class Transaction
     @transaction_type = transaction_type
   end
   def complete(bank, amount)
-    case self.transaction_type
-    when 'deposit'
-      bank.balance += amount;
-    when 'withdraw'
-      bank.balance -= amount;
-    end
+    self.transaction_type == 'deposit' ? bank.balance += amount.to_i : bank.balance -= amount.to_i;
   end
 end

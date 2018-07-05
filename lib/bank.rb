@@ -1,6 +1,6 @@
- require 'date'
- require 'transaction'
- require 'printer'
+require 'date'
+require 'transaction'
+require 'printer'
 class Bank
   def initialize
     @balance = 0

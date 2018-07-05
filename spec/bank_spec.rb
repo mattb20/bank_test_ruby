@@ -45,13 +45,8 @@ describe Bank do
   it 'has a method that will output a withdrawal confirmation' do
     expect{ bank.send(:confirm_withdrawal, 10) }.to output("Withdrawal of £10 successful\n").to_stdout
   end
-  it 'has a method that will deduct a given amount from the balance' do
-    #arrange
-    bank.balance= 15
-    #act
-    bank.send :subtract_from_balance, 10
-    #assertion
-    expect(bank.balance).to eq 5
+  it 'has a method that will call the transaction class' do
+
   end
   it 'gives the user functions to choose from' do
     expect{ bank.send :ask_user_choice }.to output("Please enter the number corresponding to what you would like to do\n").to_stdout

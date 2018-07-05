@@ -51,11 +51,6 @@
         null,
         1,
         null,
-        1,
-        null,
-        1,
-        null,
-        1,
         null,
         1,
         2,
@@ -194,7 +189,7 @@
         1,
         null,
         1,
-        1,
+        0,
         null,
         1,
         2,
@@ -245,11 +240,6 @@
         1,
         2,
         null,
-        1,
-        null,
-        1,
-        null,
-        null,
         null
       ],
       "/Users/user/Desktop/Projects/bank_test_ruby/lib/printer.rb": [
@@ -285,6 +275,6 @@
         null
       ]
     },
-    "timestamp": 1530784480
+    "timestamp": 1530784854
   }
 }
