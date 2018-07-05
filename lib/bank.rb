@@ -1,4 +1,6 @@
  require 'date'
+ require 'transaction'
+ require 'printer'
 class Bank
   def initialize
     @balance = 0
@@ -21,6 +23,7 @@ class Bank
         confirm_deposit(deposit_amount)
         print_current_balance
         update_transaction_history('deposit', deposit_amount)
+        function
       when 2
         withdrawal_amount = get_valid_user_amount
         while !check_user_has_balance(withdrawal_amount)
@@ -30,8 +33,10 @@ class Bank
         confirm_withdrawal(withdrawal_amount)
         print_current_balance
         update_transaction_history('withdrawal', withdrawal_amount)
+        function
       when 3
         print_transaction_history(self.transaction_history)
+        function
       when 4
         puts "See you!"
     end
