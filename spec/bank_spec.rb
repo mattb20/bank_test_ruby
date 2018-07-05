@@ -1,5 +1,6 @@
 require 'bank'
 require 'date'
+require 'transaction'
 def expect_functions_to_be_printed
   expect(STDOUT).to receive(:puts).with("Please enter the number corresponding to what you would like to do")
   expect(STDOUT).to receive(:puts).with("1) Deposit")
@@ -46,7 +47,8 @@ describe Bank do
     expect{ bank.send(:confirm_withdrawal, 10) }.to output("Withdrawal of £10 successful\n").to_stdout
   end
   it 'has a method that will call the transaction class' do
-
+    bank.send(:make_deposit, 5);
+    expect(Transaction).to receive(:new).with(bank: bank, transaction_type: 'deposit', amount: 5);
   end
   it 'gives the user functions to choose from' do
     expect{ bank.send :ask_user_choice }.to output("Please enter the number corresponding to what you would like to do\n").to_stdout
@@ -67,7 +69,7 @@ describe Bank do
     expect { bank.send :check_user_has_balance, 10 }.to output("You cannot withdraw more money than you currently have in your balance\n").to_stdout
   end
   it 'has a method that will withdraw a valid amount of money from the balance' do
-    expect(bank.send :make_withdrawal, 10).to eq -10
+    expect(bank.send :make_withdrawal, 10).to eq -10;
   end
   it 'has a method that will store whether the user made a deposit or withdrawal in the transaction history along with the date' do
     #arrange
