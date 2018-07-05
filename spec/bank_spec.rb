@@ -62,9 +62,6 @@ describe Bank do
     bank.balance = 5
     expect { bank.send :check_user_has_balance, 10 }.to output("You cannot withdraw more money than you currently have in your balance\n").to_stdout
   end
-  it 'has a method that will withdraw a valid amount of money from the balance' do
-    expect(bank.send :make_withdrawal, 10).to eq -10;
-  end
   it 'has a method that will store whether the user made a deposit or withdrawal in the transaction history along with the date' do
     #arrange
     d = DateTime.now.strftime("%d/%m/%Y")
