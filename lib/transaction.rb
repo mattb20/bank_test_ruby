@@ -7,7 +7,8 @@ class Transaction
     case self.transaction_type
     when 'deposit'
       bank.balance += amount;
-
+    when 'withdraw'
+      bank.balance -= amount;
     end
   end
 end
