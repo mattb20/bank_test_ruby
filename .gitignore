@@ -2,5 +2,6 @@
 /coverage.data
 /coverage/
 coverage/index.html
+coverage
 # Ignore Gemfile
 Gemfile
