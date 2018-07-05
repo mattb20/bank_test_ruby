@@ -19,10 +19,6 @@ describe Bank do
     allow(STDOUT).to receive(:puts)
     allow(STDIN).to receive(:gets)
   end
-  after do
-    bank.balance = 0
-    bank.transaction_history = []
-  end
   it 'has a default balance of 0' do
     expect(bank.balance).to eq 0
   end
@@ -45,6 +41,9 @@ describe Bank do
     expect(bank).to receive(:update_transaction_history);
     expect(bank).to receive(:function);
     bank.send(:apply_choice, 1);
+  end
+  it 'will ask the user again for an amount if user enters invalid amount to withdraw' do
+
   end
   it 'gives the user functions to choose from' do
     expect{ bank.send :ask_user_choice }.to output("Please enter the number corresponding to what you would like to do\n").to_stdout
