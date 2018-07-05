@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-07-05T13:05:39+01:00">2018-07-05T13:05:39+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-07-05T13:17:41+01:00">2018-07-05T13:17:41+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">83.13%</span></span>
+    (<span class="covered_percent"><span class="yellow">89.6%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.65
+         1.82
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>6</b> files in total.
-    <b>166</b> relevant lines. 
-    <span class="green"><b>138</b> lines covered</span> and
-    <span class="red"><b>28</b> lines missed </span>
+    <b>173</b> relevant lines. 
+    <span class="green"><b>155</b> lines covered</span> and
+    <span class="red"><b>18</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -52,12 +52,12 @@
       
       <tr>
         <td class="strong"><a href="#ae7d0e9f57b7b05dec2ee9e60bc0d4c2746723fa" class="src_link" title="lib/bank.rb">lib/bank.rb</a></td>
-        <td class="red strong">64.0 %</td>
+        <td class="red strong">77.33 %</td>
         <td>108</td>
         <td>75</td>
-        <td>48</td>
-        <td>27</td>
-        <td>1.3</td>
+        <td>58</td>
+        <td>17</td>
+        <td>1.6</td>
       </tr>
       
       <tr>
@@ -77,15 +77,15 @@
         <td>8</td>
         <td>8</td>
         <td>0</td>
-        <td>1.4</td>
+        <td>1.5</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#a571c122d98c2c2e71d0b604ae7a4b81b3c75fbb" class="src_link" title="spec/bank_spec.rb">spec/bank_spec.rb</a></td>
-        <td class="green strong">98.36 %</td>
-        <td>89</td>
-        <td>61</td>
-        <td>60</td>
+        <td class="green strong">98.53 %</td>
+        <td>97</td>
+        <td>68</td>
+        <td>67</td>
         <td>1</td>
         <td>2.3</td>
       </tr>
@@ -129,11 +129,11 @@
         <div class="source_table" id="ae7d0e9f57b7b05dec2ee9e60bc0d4c2746723fa">
   <div class="header">
     <h3>lib/bank.rb</h3>
-    <h4><span class="red">64.0 %</span> covered</h4>
+    <h4><span class="red">77.33 %</span> covered</h4>
     <div>
       <b>75</b> relevant lines. 
-      <span class="green"><b>48</b> lines covered</span> and
-      <span class="red"><b>27</b> lines missed.</span>
+      <span class="green"><b>58</b> lines covered</span> and
+      <span class="red"><b>17</b> lines missed.</span>
     </div>
   </div>
   
@@ -164,14 +164,14 @@
           <code class="ruby">  def initialize</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="5">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="16" data-linenumber="5">
+          <span class="hits">16</span>
           
           <code class="ruby">    @balance = 0</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="6">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="16" data-linenumber="6">
+          <span class="hits">16</span>
           
           <code class="ruby">    @functions = [&quot;1) Deposit&quot;, &quot;2) Withdraw&quot;, &quot;3) Print statement&quot;, &quot;4) Quit&quot;]</code>
         </li>
@@ -182,8 +182,8 @@
           <code class="ruby">    #Transactions will be stored in the following format inside history: [date, credit, debit, balance]</code>
         </li>
       
-        <li class="covered" data-hits="15" data-linenumber="8">
-          <span class="hits">15</span>
+        <li class="covered" data-hits="16" data-linenumber="8">
+          <span class="hits">16</span>
           
           <code class="ruby">    @transaction_history = [[&quot;date || credit || debit || balance&quot;]]</code>
         </li>
@@ -242,8 +242,8 @@
           <code class="ruby">  def apply_choice(choice)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="18">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="18">
+          <span class="hits">2</span>
           
           <code class="ruby">    case choice</code>
         </li>
@@ -254,32 +254,32 @@
           <code class="ruby">      when 1</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="20">
-          
+        <li class="covered" data-hits="1" data-linenumber="20">
+          <span class="hits">1</span>
           
           <code class="ruby">        deposit_amount = get_valid_user_amount</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="21">
-          
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
           
           <code class="ruby">        make_transaction(deposit_amount, &#39;deposit&#39;)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="22">
-          
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
           
           <code class="ruby">        print_current_balance</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="23">
-          
+        <li class="covered" data-hits="1" data-linenumber="23">
+          <span class="hits">1</span>
           
           <code class="ruby">        update_transaction_history(&#39;deposit&#39;, deposit_amount)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="24">
-          
+        <li class="covered" data-hits="1" data-linenumber="24">
+          <span class="hits">1</span>
           
           <code class="ruby">        function</code>
         </li>
@@ -410,8 +410,8 @@
           <code class="ruby">  def check_is_number(object)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="46">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="46">
+          <span class="hits">2</span>
           
           <code class="ruby">    if /[a-z-]/=~object</code>
         </li>
@@ -428,8 +428,8 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="49">
-          
+        <li class="covered" data-hits="1" data-linenumber="49">
+          <span class="hits">1</span>
           
           <code class="ruby">      true</code>
         </li>
@@ -452,20 +452,20 @@
           <code class="ruby">  def get_valid_user_amount</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="53">
-          
+        <li class="covered" data-hits="1" data-linenumber="53">
+          <span class="hits">1</span>
           
           <code class="ruby">    puts &#39;Please enter the amount you would like to deposit/withdraw&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="54">
-          
+        <li class="covered" data-hits="1" data-linenumber="54">
+          <span class="hits">1</span>
           
           <code class="ruby">    user_input = STDIN.gets.chomp</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="55">
-          
+        <li class="covered" data-hits="1" data-linenumber="55">
+          <span class="hits">1</span>
           
           <code class="ruby">    while !check_is_number(user_input)</code>
         </li>
@@ -488,8 +488,8 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="59">
-          
+        <li class="covered" data-hits="1" data-linenumber="59">
+          <span class="hits">1</span>
           
           <code class="ruby">    return user_input</code>
         </li>
@@ -506,8 +506,8 @@
           <code class="ruby">  def make_transaction(amount, transaction_type)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="62">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="62">
+          <span class="hits">2</span>
           
           <code class="ruby">    Transaction.new(self, amount, transaction_type);</code>
         </li>
@@ -644,8 +644,8 @@
           <code class="ruby">  def print_current_balance</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="85">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="2" data-linenumber="85">
+          <span class="hits">2</span>
           
           <code class="ruby">    puts &quot;Your current balance: £#{self.balance}&quot;</code>
         </li>
@@ -856,8 +856,8 @@
           <code class="ruby">  def initialize(bank, transaction_type, amount)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="4">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="4" data-linenumber="4">
+          <span class="hits">4</span>
           
           <code class="ruby">    @transaction_type = transaction_type</code>
         </li>
@@ -918,10 +918,10 @@
         <div class="source_table" id="a571c122d98c2c2e71d0b604ae7a4b81b3c75fbb">
   <div class="header">
     <h3>spec/bank_spec.rb</h3>
-    <h4><span class="green">98.36 %</span> covered</h4>
+    <h4><span class="green">98.53 %</span> covered</h4>
     <div>
-      <b>61</b> relevant lines. 
-      <span class="green"><b>60</b> lines covered</span> and
+      <b>68</b> relevant lines. 
+      <span class="green"><b>67</b> lines covered</span> and
       <span class="red"><b>1</b> lines missed.</span>
     </div>
   </div>
@@ -1019,8 +1019,8 @@
           <code class="ruby">describe Bank do</code>
         </li>
       
-        <li class="covered" data-hits="14" data-linenumber="16">
-          <span class="hits">14</span>
+        <li class="covered" data-hits="15" data-linenumber="16">
+          <span class="hits">15</span>
           
           <code class="ruby">  subject(:bank) { described_class.new }</code>
         </li>
@@ -1031,20 +1031,20 @@
           <code class="ruby">  before do</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="18">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="14" data-linenumber="18">
+          <span class="hits">14</span>
           
           <code class="ruby">    allow(STDOUT).to receive(:write)</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="19">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="14" data-linenumber="19">
+          <span class="hits">14</span>
           
           <code class="ruby">    allow(STDOUT).to receive(:puts)</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="20">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="14" data-linenumber="20">
+          <span class="hits">14</span>
           
           <code class="ruby">    allow(STDIN).to receive(:gets)</code>
         </li>
@@ -1061,14 +1061,14 @@
           <code class="ruby">  after do</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="23">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="14" data-linenumber="23">
+          <span class="hits">14</span>
           
           <code class="ruby">    bank.balance = 0</code>
         </li>
       
-        <li class="covered" data-hits="13" data-linenumber="24">
-          <span class="hits">13</span>
+        <li class="covered" data-hits="14" data-linenumber="24">
+          <span class="hits">14</span>
           
           <code class="ruby">    bank.transaction_history = []</code>
         </li>
@@ -1172,103 +1172,103 @@
         <li class="covered" data-hits="1" data-linenumber="41">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;gives the user functions to choose from&#39; do</code>
+          <code class="ruby">  it &#39;will guide the user through making a deposit&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="42">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="42">
+          <span class="hits">1</span>
           
-          <code class="ruby">    expect{ bank.send :ask_user_choice }.to output(&quot;Please enter the number corresponding to what you would like to do\n&quot;).to_stdout</code>
+          <code class="ruby">    expect(STDOUT).to receive(:puts).with(&#39;Please enter the amount you would like to deposit/withdraw&#39;);</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="43">
+        <li class="covered" data-hits="1" data-linenumber="43">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">    allow(STDIN).to receive(:gets).and_return(&quot;10&quot;);</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="44">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;has a method that returns possible functions of bank&#39; do</code>
+          <code class="ruby">    expect(STDOUT).to receive(:puts).with(&#39;Your current balance: £0&#39;);</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
-          <code class="ruby">    bank.functions = [&quot;1) Deposit&quot;]</code>
+          <code class="ruby">    expect(bank).to receive(:update_transaction_history);</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="46">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
           
-          <code class="ruby">    expect{bank.send(:print_functions)}. to output(&quot;1) Deposit\n&quot;).to_stdout</code>
+          <code class="ruby">    expect(bank).to receive(:function);</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="47">
+        <li class="covered" data-hits="1" data-linenumber="47">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    bank.send(:apply_choice, 1);</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="48">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="48">
+        <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;has a method that prints the balance of the bank account&#39; do</code>
+          <code class="ruby">  it &#39;gives the user functions to choose from&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="49">
+        <li class="covered" data-hits="2" data-linenumber="50">
           <span class="hits">2</span>
           
-          <code class="ruby">    expect{ bank.send :print_current_balance }.to output(&quot;Your current balance: £0\n&quot;).to_stdout</code>
+          <code class="ruby">    expect{ bank.send :ask_user_choice }.to output(&quot;Please enter the number corresponding to what you would like to do\n&quot;).to_stdout</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby">  end</code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="51">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &#39;has a method that will get a choice from the user&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="52">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(STDIN).to receive(:gets).and_return(&quot;1\n&quot;)</code>
+          <code class="ruby">  it &#39;has a method that returns possible functions of bank&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="53">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(bank.send(:get_user_choice)).to eq (&quot;1&quot;)</code>
+          <code class="ruby">    bank.functions = [&quot;1) Deposit&quot;]</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="covered" data-hits="2" data-linenumber="54">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    expect{bank.send(:print_functions)}. to output(&quot;1) Deposit\n&quot;).to_stdout</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="55">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  it &#39;prevents the user from withdrawing more than they have currently on balance&#39;do</code>
-        </li>
-      
         <li class="covered" data-hits="1" data-linenumber="56">
           <span class="hits">1</span>
           
-          <code class="ruby">    bank.balance = 5</code>
+          <code class="ruby">  it &#39;has a method that prints the balance of the bank account&#39; do</code>
         </li>
       
         <li class="covered" data-hits="2" data-linenumber="57">
           <span class="hits">2</span>
           
-          <code class="ruby">    expect { bank.send :check_user_has_balance, 10 }.to output(&quot;You cannot withdraw more money than you currently have in your balance\n&quot;).to_stdout</code>
+          <code class="ruby">    expect{ bank.send :print_current_balance }.to output(&quot;Your current balance: £0\n&quot;).to_stdout</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="58">
@@ -1280,184 +1280,232 @@
         <li class="covered" data-hits="1" data-linenumber="59">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;has a method that will store whether the user made a deposit or withdrawal in the transaction history along with the date&#39; do</code>
+          <code class="ruby">  it &#39;has a method that will get a choice from the user&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="covered" data-hits="1" data-linenumber="60">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    #arrange</code>
+          <code class="ruby">    expect(STDIN).to receive(:gets).and_return(&quot;1\n&quot;)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="61">
           <span class="hits">1</span>
           
-          <code class="ruby">    d = DateTime.now.strftime(&quot;%d/%m/%Y&quot;)</code>
+          <code class="ruby">    expect(bank.send(:get_user_choice)).to eq (&quot;1&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="62">
+        <li class="never" data-hits="" data-linenumber="62">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="63">
           <span class="hits">1</span>
           
-          <code class="ruby">    deposit_amount = &#39;10.00&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="63">
-          
-          
-          <code class="ruby">    #act</code>
+          <code class="ruby">  it &#39;prevents the user from withdrawing more than they have currently on balance&#39;do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="64">
           <span class="hits">1</span>
           
-          <code class="ruby">    bank.send :update_transaction_history, &#39;deposit&#39;, deposit_amount</code>
+          <code class="ruby">    bank.balance = 5</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="65">
+        <li class="covered" data-hits="2" data-linenumber="65">
+          <span class="hits">2</span>
           
-          
-          <code class="ruby">    #assert</code>
+          <code class="ruby">    expect { bank.send :check_user_has_balance, 10 }.to output(&quot;You cannot withdraw more money than you currently have in your balance\n&quot;).to_stdout</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="66">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    expect(bank.transaction_history[1]).to eq([&quot;#{d}&quot;,&quot;#{deposit_amount}&quot;,&#39; &#39;,&#39;%.2f&#39; % bank.balance.to_i])</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="67">
+        <li class="never" data-hits="" data-linenumber="66">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="68">
+        <li class="covered" data-hits="1" data-linenumber="67">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;has a method that will print out the transaction history in the required format&#39; do</code>
+          <code class="ruby">  it &#39;has a method that will store whether the user made a deposit or withdrawal in the transaction history along with the date&#39; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="68">
+          
+          
+          <code class="ruby">    #arrange</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="69">
           <span class="hits">1</span>
           
-          <code class="ruby">    bank.transaction_history = [[&quot;date || credit || debit || balance&quot;],[&quot;22/05/2018&quot;, &#39;10.00&#39;, &quot; &quot;, &#39;10.00&#39;]]</code>
+          <code class="ruby">    d = DateTime.now.strftime(&quot;%d/%m/%Y&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="70">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
           
-          <code class="ruby">    expect{ bank.send :print_transaction_history, bank.transaction_history }.to output(&quot;date || credit || debit || balance\n22/05/2018 || 10.00 ||   || 10.00\n&quot;).to_stdout</code>
+          <code class="ruby">    deposit_amount = &#39;10.00&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    #act</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="72">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;gives the user an option to quit the app&#39; do</code>
+          <code class="ruby">    bank.send :update_transaction_history, &#39;deposit&#39;, deposit_amount</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="73">
           
           
-          <code class="ruby">    # arrange</code>
+          <code class="ruby">    #assert</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="74">
           <span class="hits">1</span>
           
-          <code class="ruby">    bank = Bank.new;</code>
+          <code class="ruby">    expect(bank.transaction_history[1]).to eq([&quot;#{d}&quot;,&quot;#{deposit_amount}&quot;,&#39; &#39;,&#39;%.2f&#39; % bank.balance.to_i])</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="75">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    $stdout.puts &#39;hello&#39;</code>
-        </li>
-      
-        <li class="covered" data-hits="5" data-linenumber="76">
-          <span class="hits">5</span>
-          
-          <code class="ruby">    expect(bank.functions.select{|function| /Quit/.match(function)}.size).to be &gt;= 1</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="77">
+        <li class="never" data-hits="" data-linenumber="75">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="78">
+        <li class="covered" data-hits="1" data-linenumber="76">
           <span class="hits">1</span>
           
-          <code class="ruby">  it &#39;gives the user a message confirmation when the user chooses to quit&#39; do</code>
+          <code class="ruby">  it &#39;has a method that will print out the transaction history in the required format&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="77">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    bank.transaction_history = [[&quot;date || credit || debit || balance&quot;],[&quot;22/05/2018&quot;, &#39;10.00&#39;, &quot; &quot;, &#39;10.00&#39;]]</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="78">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    expect{ bank.send :print_transaction_history, bank.transaction_history }.to output(&quot;date || credit || debit || balance\n22/05/2018 || 10.00 ||   || 10.00\n&quot;).to_stdout</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="79">
           
           
-          <code class="ruby">    # arrange</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="80">
           <span class="hits">1</span>
           
-          <code class="ruby">    bank = Bank.new;</code>
+          <code class="ruby">  it &#39;gives the user an option to quit the app&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="81">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="81">
           
-          <code class="ruby">    some_greeting = &quot;See you!&quot;</code>
+          
+          <code class="ruby">    # arrange</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="82">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect_functions_to_be_printed</code>
+          <code class="ruby">    bank = Bank.new;</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="83">
           <span class="hits">1</span>
           
-          <code class="ruby">    expect(STDIN).to receive(:gets).and_return(&quot;4\n&quot;);</code>
+          <code class="ruby">    $stdout.puts &#39;hello&#39;</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="84">
-          <span class="hits">1</span>
+        <li class="covered" data-hits="5" data-linenumber="84">
+          <span class="hits">5</span>
           
-          <code class="ruby">    expect(STDOUT).to receive(:puts).with(some_greeting)</code>
+          <code class="ruby">    expect(bank.functions.select{|function| /Quit/.match(function)}.size).to be &gt;= 1</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="85">
-          <span class="hits">1</span>
-          
-          <code class="ruby">    bank.function;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="86">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="87">
+        <li class="never" data-hits="" data-linenumber="85">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="88">
+        <li class="covered" data-hits="1" data-linenumber="86">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;gives the user a message confirmation when the user chooses to quit&#39; do</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="87">
+          
+          
+          <code class="ruby">    # arrange</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="88">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    bank = Bank.new;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="89">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    some_greeting = &quot;See you!&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="90">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect_functions_to_be_printed</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="91">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(STDIN).to receive(:gets).and_return(&quot;4\n&quot;);</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="92">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(STDOUT).to receive(:puts).with(some_greeting)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="93">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    bank.function;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="94">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="89">
+        <li class="never" data-hits="" data-linenumber="95">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="96">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="97">
           
           
           <code class="ruby">end</code>

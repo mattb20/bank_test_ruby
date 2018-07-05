@@ -38,6 +38,14 @@ describe Bank do
     expect(Transaction).to receive(:new);
     bank.send(:make_transaction, 5, 'deposit');
   end
+  it 'will guide the user through making a deposit' do
+    expect(STDOUT).to receive(:puts).with('Please enter the amount you would like to deposit/withdraw');
+    allow(STDIN).to receive(:gets).and_return("10");
+    expect(STDOUT).to receive(:puts).with('Your current balance: £0');
+    expect(bank).to receive(:update_transaction_history);
+    expect(bank).to receive(:function);
+    bank.send(:apply_choice, 1);
+  end
   it 'gives the user functions to choose from' do
     expect{ bank.send :ask_user_choice }.to output("Please enter the number corresponding to what you would like to do\n").to_stdout
   end
