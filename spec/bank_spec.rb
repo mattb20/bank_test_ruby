@@ -31,12 +31,6 @@ describe Bank do
     #assert
     expect{ bank.send(:get_deposit_amount) }.to output("Please enter the amount you would like to deposit\n").to_stdout
   end
-  it 'adds the users amount to the bank balance' do
-    #act
-    bank.send :make_deposit, '10'
-    #assert
-    expect(bank.balance).to eq 10
-  end
   it 'has a method that prevents the user from trying to deposit or withdraw a non numerical amount' do
     expect(bank.send(:check_is_number, '1234h')).to eq false
   end

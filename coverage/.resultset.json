@@ -110,9 +110,6 @@
       "/Users/user/Desktop/Projects/bank_test_ruby/lib/bank.rb": [
         1,
         1,
-        1,
-        1,
-        1,
         19,
         19,
         null,
@@ -245,16 +242,16 @@
         null,
         null
       ],
-      "/Users/user/Desktop/Projects/bank_test_ruby/lib/printer.rb": [
-        1,
-        null
-      ],
       "/Users/user/Desktop/Projects/bank_test_ruby/spec/printer_spec.rb": [
         1,
         1,
         null,
         1,
         null,
+        null
+      ],
+      "/Users/user/Desktop/Projects/bank_test_ruby/lib/printer.rb": [
+        1,
         null
       ],
       "/Users/user/Desktop/Projects/bank_test_ruby/spec/transaction_spec.rb": [
@@ -278,6 +275,6 @@
         null
       ]
     },
-    "timestamp": 1530786136
+    "timestamp": 1530786560
   }
 }
