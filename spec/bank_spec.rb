@@ -41,8 +41,8 @@ describe Bank do
     expect{ bank.send(:confirm_withdrawal, 10) }.to output("Withdrawal of £10 successful\n").to_stdout
   end
   it 'has a method that will call the transaction class' do
+    expect(Transaction).to receive(:new);
     bank.send(:make_deposit, 5);
-    expect(Transaction).to receive(:new).with(bank: bank, transaction_type: 'deposit', amount: 5);
   end
   it 'gives the user functions to choose from' do
     expect{ bank.send :ask_user_choice }.to output("Please enter the number corresponding to what you would like to do\n").to_stdout

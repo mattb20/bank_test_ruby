@@ -1,3 +1,4 @@
+require 'transaction'
 class Bank
   def initialize
     @balance = 0
@@ -64,7 +65,6 @@ class Bank
     return user_input
   end
   def make_deposit(amount)
-    p self
     Transaction.new(self, 'deposit', amount);
   end
   def check_user_has_balance(amount)
