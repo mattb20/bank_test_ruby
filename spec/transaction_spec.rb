@@ -14,5 +14,9 @@ describe Transaction do
       allow(bank). to receive(:balance=).and_return(1);
       expect(transaction.complete(bank, 4)).to eq(1);
     end
+    it 'will output a confirmation of a transaction' do
+      transaction = Transaction.new(bank, 'withdraw', 4);
+      expect(transaction.send(:confirm, 'withdraw', 4)).to eq 'Withdrawal of £4 successful!'
+    end
 
 end
