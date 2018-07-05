@@ -238,6 +238,7 @@
       ],
       "/Users/user/Desktop/Projects/bank_test_ruby/lib/transaction.rb": [
         1,
+        1,
         null,
         null
       ],
@@ -266,6 +267,6 @@
         null
       ]
     },
-    "timestamp": 1530782313
+    "timestamp": 1530782528
   }
 }
