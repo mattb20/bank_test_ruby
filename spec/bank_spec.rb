@@ -40,16 +40,6 @@ describe Bank do
     expect(bank).to receive(:function);
     bank.send(:apply_choice, 1);
   end
-  # it 'will ask the user again for an amount if user enters invalid amount to withdraw' do
-  #   expect(STDOUT).to receive(:puts).with('Please enter the amount you would like to deposit/withdraw');
-  #   allow(STDIN).to receive(:gets).and_return("10\n");
-  #   expect(STDOUT).to receive(:puts).with('You cannot withdraw more money than you currently have in your balance');
-  #   expect(STDOUT).to receive(:puts).with('Please enter the amount you would like to deposit/withdraw');
-  #   allow(STDIN).to receive(:gets).and_return("0\n");
-  #   allow(STDIN).to receive(:gets).and_return("4\n");
-  #   expect(STDOUT).to receive(:puts).with('See you!');
-  #   bank.send(:apply_choice, 2);
-  # end
   it 'gives the user functions to choose from' do
     expect{ bank.send :ask_user_choice }.to output("Please enter the number corresponding to what you would like to do\n").to_stdout
   end
